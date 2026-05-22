@@ -34,6 +34,7 @@ Before running Nexa, ensure you have Python installed along with a working micro
 
 You will also need a WeatherAPI Key:
 
+.
 Sign up on WeatherAPI.
 
 Create a file named AI_NEXA.py in the same directory.
