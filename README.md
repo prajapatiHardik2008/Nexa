@@ -74,11 +74,13 @@ Nexa stays in the background waiting for its wake word. Say "Nexa" to activate i
 Once it answers "Yes sir", you can immediately give it any of the supported commands!
 
 Example Commands:
+
 “Open YouTube” (It will subsequently ask if you want to search something specific).
 
 “Play Skyfall” (Launches your linked song from the music library).
 
 “What is the weather?” (Nexa will request your city name to pull live data).
+
 
 “Open Chatbot” (Launches an interactive terminal-based AI chat loop).
 
