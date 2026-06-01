@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXA Book</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia,serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#0f172a;
+    overflow:hidden;
+}
+
+.book{
+    position:relative;
+    width:min(90vw,700px);
+    height:min(70vh,500px);
+    perspective:3000px;
+}
+
+.page{
+    position:absolute;
+    width:100%;
+    height:100%;
+    transform-origin:left center;
+    transform-style:preserve-3d;
+    transition:1.2s;
+}
+
+.page.flipped{
+    transform:rotateY(-180deg);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    overflow:hidden;
+    border-radius:0 12px 12px 0;
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+.front{
+    background:#fefefe;
+}
+
+.back{
+    background:#f7f7f7;
+    transform:rotateY(180deg);
+}
+
+.content{
+    padding:30px;
+}
+
+.content h2{
+    margin-bottom:15px;
+}
+
+.content p{
+    line-height:1.8;
+}
+
+.cover{
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e293b
+    );
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:
+    linear-gradient(
+        135deg,
+        #00d4ff,
+        #2563eb
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:60px;
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    box-shadow:
+    0 0 30px rgba(0,212,255,.5);
+}
+
+.cover h1{
+    font-size:3rem;
+    letter-spacing:8px;
+}
+
+.cover p{
+    margin-top:10px;
+    color:#cbd5e1;
+}
+
+.controls{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+}
+
+button{
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.shadow{
+    position:absolute;
+    width:105%;
+    height:40px;
+    bottom:-25px;
+    left:-2%;
+    border-radius:50%;
+    background:rgba(0,0,0,.45);
+    filter:blur(18px);
+}
+
+@media(max-width:768px){
+
+    .book{
+        width:95vw;
+        height:65vh;
+    }
+
+    .logo{
+        width:80px;
+        height:80px;
+        font-size:40px;
+    }
+
+    .cover h1{
+        font-size:2rem;
+    }
+
+    .content{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="book">
+
+<div class="shadow"></div>
+
+<!-- FRONT COVER -->
+<div class="page" style="z-index:4;">
+    <div class="front cover">
+        <div class="logo">N</div>
+        <h1>NEXA</h1>
+        <p>Artificial Intelligence Assistant</p>
+    </div>
+
+    <div class="back">
+        <div class="content">
+            <h2>Welcome</h2>
+            <p>
+                Welcome to Nexa.
+                This is the beginning of your AI journey.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" style="z-index:3;">
+    <div class="front">
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>
+                NEXA AI Agent is a lightweight, Python-based voice assistant designed to make system automation completely hands-free. Operating on a continuous active listening engine, it triggers instantly upon hearing the wake-word "Speak NEXA". It features a Standard Command Book for handling core OS tasks—like taking screenshots and web routing—alongside a highly flexible Customize Book that lets users map their own vocal shortcuts without modifying the core logic.
+                <br>
+                <br>
+                <center>Developed by Hardik</center>
+            </p>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="content">
+            <h2>Chapter 2</h2>
+            <p>
+                Voice commands, AI reasoning,
+                web integration and more.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" style="z-index:2;">
+    <div class="front">
+        <div class="content">
+            <h2>Installation & Setup</h2>
+            <p><div class="setup-card" style="background: #131326; color: #e0e0ff; font-family: sans-serif; padding: 20px; border-radius: 8px; border: 1px solid #3700cc; max-width: 500px;">
+    <h3 style="color: #6a00ff; margin-top: 0; text-shadow: 0 0 8px rgba(106,0,255,0.4);">Quick Setup Guide</h3>
+    
+    <ol style="padding-left: 20px; margin: 0; line-height: 1.8;">
+        <li><strong>Clone Project:</strong><code style="background: #1a1a36; color: #00ffaa;  padding: 2px 6px; border-radius: 4px;"><p><a href="https://github.com/prajapatiHardik2008/Nexa.git" target="_blank">Clone Repository</a></p></code></li>
+        <li><strong>Install Dependencies:</strong> <code style="background: #1a1a36; color: #00ffaa; padding: 2px 6px; border-radius: 4px;">pip install speech_recognition gtts pyautogui pygame requests</code></li>
+        <li><strong>Run Nexa:</strong> <code style="background: #1a1a36; color: #ff007f; padding: 2px 6px; border-radius: 4px;">python main.py</code></li>
+        <li><strong>Trigger:</strong> Speak <span style="color: #00ffaa; font-weight: bold;">"Speak NEXA"</span> to start.</li>
+    </ol>
+    
+    <div style="margin-top: 15px; text-align: right; font-size: 0.85rem; color: #8a8aaf; font-style: italic;">
+        $ H-24
+    </div>
+    <br>
+    <br>
+    </div>
+            <br>
+            Developed by <b>Hardik Prajapati</b>
+            </p>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="content">
+            <h2>Final Notes</h2>
+            <p>
+                Every great project starts with
+                a simple idea.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="page">
+
+    <div class="front">
+        <div class="content">
+            <h2>Commands</h2>
+            <p>
+                 <ul style="line-height:1.8; list-style-type: none; padding-left: 0;">
+                <li><b>Open Google:</b> "open google" <span style="color: #8a8aaf; font-size: 0.85rem;">(Triggers Windows key & searches Google)</span></li>
+                <li><b>Open Chrome:</b> "open chrome" <span style="color: #8a8aaf; font-size: 0.85rem;">(Launches Chrome via GUI automation)</span></li>
+                <li><b>Open Facebook:</b> "open facebook" <span style="color: #8a8aaf; font-size: 0.85rem;">(Opens URL directly in webbrowser)</span></li>
+                <li><b>VS Code:</b> "vs code" <span style="color: #8a8aaf; font-size: 0.85rem;">(Opens Visual Studio Code)</span></li>
+                <li><b>YouTube Automation:</b> "open youtube" <span style="color: #8a8aaf; font-size: 0.85rem;">(Asks if you want to search content inside YouTube)</span></li>
+                <li><b>Play Music:</b> "play [song name]" <span style="color: #8a8aaf; font-size: 0.85rem;">(Fetches links from music_library)</span></li>
+                <li><b>System Notepad:</b> "notepad" <span style="color: #8a8aaf; font-size: 0.85rem;">(Launches local text editor)</span></li>
+                <li><b>AI Chatbot Mode:</b> "chatbot" <span style="color: #8a8aaf; font-size: 0.85rem;">(Starts terminal loop for direct Q&A with Pollinations AI)</span></li>
+                <li><b>Live Weather Tracker:</b> "weather" or "mausam" <span style="color: #8a8aaf; font-size: 0.85rem;">(Asks for city name & speaks real-time temperature data)</span></li>
+                <li><b>Check Time:</b> "time" <span style="color: #8a8aaf; font-size: 0.85rem;">(Speaks current local date and time)</span></li>
+                <li><b>Camera Security:</b> "face detector" <span style="color: #8a8aaf; font-size: 0.85rem;">(Privacy guard response block)</span></li>
+                <li><b>Nexa AI Engine:</b> Any other words <span style="color: #8a8aaf; font-size: 0.85rem;">(Forwards command directly to Aiprocess LLM)</span></li>
+                <li><b>System Exit:</b> "stop", "exit", or "quit" <span style="color: #8a8aaf; font-size: 0.85rem;">(Triggers shutdown sequence for Nexa agent)</span></li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="content">
+            <h2>Chapter X Continued</h2>
+            <p>Back content...</p>
+        </div>
+    </div>
+
+</div>
+<!-- BACK COVER -->
+<div class="page" style="z-index:1;">
+    <div class="front cover">
+        <div class="logo">N</div>
+        <h1>NEXA</h1>
+        <p>Back Cover</p>
+    </div>
+
+    <div class="back cover">
+        <div class="logo">N</div>
+        <h1>NEXA</h1>
+        <p>The End</p>
+    </div>
+</div>
+
+</div>
+
+<div class="controls">
+    <button onclick="prevPage()">◀ Previous</button>
+    <button onclick="nextPage()">Next ▶</button>
+</div>
+
+<script>
+
+const pages = document.querySelectorAll(".page");
+
+pages.forEach((page, index) => {
+    page.style.zIndex = pages.length - index;
+});
+let current = 0;
+
+function nextPage(){
+
+    if(current < pages.length && current != pages.length - 1){
+        pages[current].classList.add("flipped");
+        current++;
+    }
+
+}
+
+function prevPage(){
+
+    if(current > 0 ){
+        current--;
+        pages[current].classList.remove("flipped");
+    }
+
+}
+
+</script>
+
+</body>
+</html>
