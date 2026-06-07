@@ -1,7 +1,7 @@
 Here is a complete, clean, and professional README.md for your GitHub repository. It clearly explains what NEXA does, how it works, and how to set it up.
 
 Nexa
-Nexa is an intelligent Python-based Desktop Voice Assistant designed to automate daily tasks, provide instant AI-driven answers, and interact seamlessly through voice commands. By combining Google Text-to-Speech (gTTS), speech recognition, and web automation tools, Nexa serves as a highly responsive virtual companion.
+Nexa is an intelligent Python-based Desktop Voice Assistant designed to automate daily tasks, provide instant AI-driven answers, and interact seamlessly through voice commands. By  combining Google Text-to-Speech (gTTS),speech recognition, and web automation tools, Nexa serves as a highly responsive virtual companion.
 
 🚀 Features
 Voice Automation: Open major applications and websites like Google, Chrome, YouTube, Facebook, and VS Code with simple voice prompts.
