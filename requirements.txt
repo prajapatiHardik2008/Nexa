@@ -1,0 +1,8 @@
+speechrecognition
+gtts
+pygame
+requests
+pyautogui
+python-dotenv
+spacy
+deep_translator
