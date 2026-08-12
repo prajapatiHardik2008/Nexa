@@ -1,3 +1,7 @@
-from actions.informations import weathernow
+print("[MAIN] Starting...")
 
-weathernow()
+from core import assistant
+print('import sucess. ')
+nexa = assistant.NexaAssistant()
+print('now ready to run')
+nexa.run()

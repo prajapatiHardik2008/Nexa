@@ -83,4 +83,3 @@ def apiprocess(command):
 
 
 
-print(apiprocess("hy"))

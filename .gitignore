@@ -1,6 +1,6 @@
 # Environment variables and secrets
 .env
-
+test.py
 # Python cache and build files
 __pycache__/
 *.py[cod]
