@@ -11,31 +11,38 @@ class NexaAssistant:
         self.modeName = "Normal 🟢"
         print(f"[INIT] Nexa Assistant initialized in Mode {self.modeName}")
     def switchMode(self,command):
-        if "switch to mode 1" in command.lower() or "normal mode" in command.lower():
+        command = command.lower()
+        if "switch to mode 1" in command or "normal mode" in command:
             self.current_mode = 1
             self.modeName = "Normal 🟢"
             speak("Switched to Normal Assistant Mode. ")
-            print(f"|-------------------------------------|")
-            print(f"| Current Mode  |    {self.modeName}  |")
-            print(f"|-------------------------------------|")
-            return True
-        elif "switch to mode 2" in command.lower() or "english learning mode" in command.lower():
+
+        elif "switch to mode 2" in command or "english learning mode" in command:
             self.current_mode = 2
             self.modeName = "English Learing Mode 🔵"
             speak("Switched to English + Normal Assistant Mode. ")
-            print(f"|-------------------------------------|")
-            print(f"| Current Mode  |    {self.modeName}  |")
-            print(f"|-------------------------------------|")
-            return True
-        elif "switch to mode 3" in command.lower() or "agentic mode" in command.lower():
+
+        elif "switch to mode 3" in command or "agentic mode" in command:
             self.current_mode = 3
-            self.modeName = "Agentic Mode 🔵"
+            self.modeName = "Agentic Mode 🔴"
             speak("Switched to Agentic Mode. ")
-            print(f"|-------------------------------------|")
-            print(f"| Current Mode  |    {self.modeName}  |")
-            print(f"|-------------------------------------|")
-            return True
-        return False
+        else:
+            return False    
+
+        print(f"|-------------------------------------|")
+        print(f"| Current Mode  |    {self.modeName}  |")
+        print(f"|-------------------------------------|")
+        return True
     def run(self):
-        print("Nexa is Running ....")
-        input("Press Enter to exit testing...")
+        speak("Powering up System ...")
+        while True:
+            if self.current_mode == 1:
+                pass
+            if self.current_mode == 2:
+                pass
+            if self.current_mode == 3:
+                pass
+
+
+
+

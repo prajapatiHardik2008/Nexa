@@ -1,7 +1,3 @@
-print("[MAIN] Starting...")
+from core.agent import runnexa
 
-from core import assistant
-print('import sucess. ')
-nexa = assistant.NexaAssistant()
-print('now ready to run')
-nexa.run()
+runnexa()

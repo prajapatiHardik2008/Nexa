@@ -2,7 +2,7 @@ from voice.speaker import speak
 import time 
 import pyautogui as p
 
-def openchrome():
+def open_chrome():
     speak("opening chroe ...")
     time.sleep(1)
     p.press('win')
@@ -10,7 +10,7 @@ def openchrome():
     p.write('chrome',interval=0.3)
     p.press('enter')
 
-def openvscode():
+def open_vscode():
     speak("Opening  visual studio code  ")
     time.sleep(1)
     p.press('win')
@@ -18,7 +18,7 @@ def openvscode():
     p.write('vs code',interval=0.3)
     p.press('enter')
 
-def openyoutube():
+def open_youtube():
     speak("opening youtube ...")
     time.sleep(1)
     p.press('win')

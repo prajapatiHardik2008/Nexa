@@ -6,7 +6,7 @@ def openFacebook():
 def openInsta():
     webbrowser("https://www.instagram.com/prajapati__hardik__24/")
 
-def opengithub():
+def openGithub():
     webbrowser("https://github.com/prajapatiHardik2008")
 
 def openLeetcode():
