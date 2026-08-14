@@ -1,10 +1,4 @@
-from core.normal import  NormalMode
+class NexaAgentic:
+    def login_page(self):
+        print("making a log in page !")
 
-def runnexa():
-    normal = NormalMode()
-
-    command = "open_chrome"
-
-    function = getattr(normal, command, normal.default)
-
-    function()

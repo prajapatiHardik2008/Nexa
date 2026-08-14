@@ -1,13 +1,13 @@
 import webbrowser
 
 def openFacebook():
-    webbrowser('https://www.facebook.com')
+    webbrowser.open('https://www.facebook.com')
 
 def openInsta():
-    webbrowser("https://www.instagram.com/prajapati__hardik__24/")
+    webbrowser.open("https://www.instagram.com/")
 
 def openGithub():
-    webbrowser("https://github.com/prajapatiHardik2008")
+    webbrowser.open("https://github.com/")
 
 def openLeetcode():
-    webbrowser("https://leetcode.com/problemset/")
+    webbrowser.open("https://leetcode.com/problemset/")

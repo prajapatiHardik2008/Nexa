@@ -1,48 +1,75 @@
-import os
-from brain.llm import apiprocess  
-from utils.getverb import getVerb  
 from voice.listener import listen
 from voice.speaker import speak
-
-
+from core.normal import NormalMode
+from core.agent import NexaAgentic
 class NexaAssistant:
     def __init__(self):
         self.current_mode = 1
         self.modeName = "Normal 🟢"
+
         print(f"[INIT] Nexa Assistant initialized in Mode {self.modeName}")
-    def switchMode(self,command):
-        command = command.lower()
+
+    def getModeobj(self,modeNum):
+        if modeNum == 1:
+            normal = NormalMode()
+            return normal
+        elif modeNum == 3:
+            agentic = NexaAgentic()
+            return agentic
+        else:
+            pass
+        
+    def switchMode(self, command):
+        command = command.lower().strip()
+
         if "switch to mode 1" in command or "normal mode" in command:
             self.current_mode = 1
             self.modeName = "Normal 🟢"
-            speak("Switched to Normal Assistant Mode. ")
+            speak("Switched to Normal Assistant Mode.")
 
         elif "switch to mode 2" in command or "english learning mode" in command:
             self.current_mode = 2
-            self.modeName = "English Learing Mode 🔵"
-            speak("Switched to English + Normal Assistant Mode. ")
+            self.modeName = "English Learning Mode 🔵"
+            speak("Switched to English Learning Mode.")
 
         elif "switch to mode 3" in command or "agentic mode" in command:
             self.current_mode = 3
             self.modeName = "Agentic Mode 🔴"
-            speak("Switched to Agentic Mode. ")
-        else:
-            return False    
+            speak("Switched to Agentic Mode.")
 
-        print(f"|-------------------------------------|")
+        else:
+            print('please tell the mode name ')
+            return False
+
+        print("|-------------------------------------|")
         print(f"| Current Mode  |    {self.modeName}  |")
-        print(f"|-------------------------------------|")
+        print("|-------------------------------------|")
+
         return True
+
     def run(self):
         speak("Powering up System ...")
+        print("to change the mode speak 'change mode' ")
         while True:
-            if self.current_mode == 1:
-                pass
-            if self.current_mode == 2:
-                pass
-            if self.current_mode == 3:
-                pass
+            command = listen()
 
 
+            if not command:
+                continue
+            command = command.lower().strip()
+            if self.switchMode(command):
+                continue
+
+            command = command.replace(" ", "_")
+            mode = self.getModeobj(self.current_mode)
 
 
+            function = getattr(
+                mode,
+                command,
+                None
+            )
+            if function:
+                function()
+            else:
+                mode.default(command)

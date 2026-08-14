@@ -1,3 +1,5 @@
-from core.agent import runnexa
+from core.assistant import NexaAssistant
 
-runnexa()
+nexa = NexaAssistant()
+
+nexa.run()
